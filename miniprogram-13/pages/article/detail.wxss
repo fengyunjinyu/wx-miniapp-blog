@@ -1,0 +1,48 @@
+/* pages/article/detail.wxss */
+
+@import "../../vendor/wxParse/wxParse.wxss";
+
+.detail-title{
+    padding: 20rpx 0;
+    font-size: 40rpx;
+    font-weight: 500;
+    line-height: 56rpx;
+}
+.detail-content{
+    background: #fff;
+    padding: 0 32rpx;
+    font-size: 16px;
+    line-height: 30px;
+    color: #333;
+}
+
+.detail-ext-info{
+    color: #888;
+    font-size: 24rpx;
+    padding-bottom: 20rpx;
+}
+
+.detail-content-text{
+    word-break: break-all;
+}
+
+
+.detail-footer-menus{
+    display: flex;
+    width: 100%;
+}
+.detail-footer-menus .menu-item{
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.detail-footer-menus .menu-item .item-icon{
+    display: block;width: 20px;height: 20px;
+}
+.detail-footer-menus .menu-item text{
+    padding-left: 20rpx;
+    font-size: 28rpx;
+    color: #666;
+
+}

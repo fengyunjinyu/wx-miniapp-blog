@@ -1,0 +1,129 @@
+<!--pages/article/detail.wxml-->
+
+<import src="../../vendor/wxParse/wxParse.wxml"> </import>
+
+<view wx:if="{{has_load}}" class="page">
+    
+
+    <view class="page-body detail-content" style="overflow-y: auto;flex: 1;">
+
+        <view class="page-header">
+            <view class="detail-title">{{article.title}}</view>
+            <view class="detail-ext-info">{{article.create_time}}  {{article.author}}</view>
+        </view>
+
+
+        <view>
+            <template is="wxParse" data="{{wxParseData:article_content.nodes}}"/>
+        </view>
+
+
+        <view class="detail-images">
+            <block wx:for="{{article.image_list}}" wx:for-item="img" wx:for-index="index">
+                <view style="display: flex;align-items: center;padding: 20rpx 0;">
+                    <image src="{{img}}" style="max-width: 100%;width: 100%;" mode="widthFix" bindtap="previewImageList" data-url="{{img}}"></image>
+                </view>
+            </block>
+        </view>
+
+
+        <view wx:if="{{relation.type!=null}}">
+        
+            <view wx:if="{{relation.type=='qrcode'}}" style="padding: 10px;display: flex;flex-direction: column;background: #fff; align-items: center; border-top: #f1f1f1 solid 1px;">
+                
+                <view style="padding:20px;">
+                    <image src="{{relation.qrcode}}" style="display: inline-block;width: 80px;height: 80px;" bindtap="previewImage" data-url="{{relation.qrcode}}"></image>
+
+                </view>
+
+                <view style="font-size: 14px;color:#888;" >长按识别二维码，打开小程序</view>         
+            </view>
+        </view>
+    </view>
+
+    <view wx:if="{{relation!=null}}" style="display:none">
+
+        <view wx:if="{{relation.type=='product'}}" style="padding: 10px;display: flex;flex-direction: row;background: #fff;border-top: #f1f1f1 solid 1px;">
+            <image src="{{relation.product_thumb}}" style="display: block;width: 80px;height: 80px;"></image>
+
+            <view style="display: flex;flex-direction: column;padding-left: 10px;">
+                <view>{{relation.product_name}}</view>
+                <view class="" style="padding: 10px;">
+                    <navigator url="/pages/article/detail?id=10" style="background: #fff;color:#ff4657;border-radius: 5px;padding: 10px;">前往了解</navigator>
+                </view>
+            </view>
+            
+        </view>        
+    </view>
+
+    <view class="page-footer" style="border-top: #ddd solid 2rpx;padding: 16px;display: flex;background: #fff;">
+
+        <view  style="display: flex;align-items: center;" class="detail-footer-menus">
+            <view class="menu-item">
+                <image class="item-icon" src="/images/icon-hot.png"></image>
+                <text>{{article.nums_read}}</text>
+            </view>
+
+            <view class="menu-item" style="padding:0 10rpx" bindtap="doZan">
+                <image class="item-icon" src="/images/icon-zan.png" ></image>
+                <text>{{article.nums_zan}}</text>
+            </view>
+            <view class="menu-item"  style="padding:0 10rpx" bindtap="doSave">
+                <image class="item-icon" src="/images/icon-save-active.png" style="width: 36rpx;height: 36rpx;" ></image>
+                <text>{{article.nums_read}}</text>
+            </view>
+            <button class="menu-item" style="width: auto !important;background: none;padding:0" open-type="share">
+                <image class="item-icon" src="/images/icon-share.png" ></image>
+                <text>分享</text>
+            </button>
+        </view>
+
+        <!--关联联系人  -->
+
+        <view wx:if="{{relation.type=='contact'}}" style="display: flex;align-items: center;display: flex;display: none;" class="detail-footer-menus">
+
+            <view style="display: flex;">
+                <image src="/images/default-avatar.jpg" style="width: 50px;height:50px;border-radius: 30px;"></image>
+            </view>
+            <view style="flex: 1;display: flex;flex-direction: column;padding-left: 10px;">
+                <view style="font-weight: 500;">刘峰（销售经理）</view>
+                <view style="font-size: 14px;color: #666;">18102115872</view>
+            </view>
+            <view bindtap="makePhoneCall" data-mobile="18102115872" style="background: #07c160;border-radius: 8px;margin-right: 10px;">
+                <image src="/images/icon-phone.png" style="display: block;width: 24px;height: 24px;padding: 6px;"></image>
+            </view>
+
+            <view bindtap="makePhoneCall" data-mobile="18102115872" style="background: #07c160;border-radius: 8px;">
+                <image src="/images/icon-weixin.png" style="display: block;width: 24px;height: 24px;padding: 6px"></image>
+            </view>
+        </view>
+
+
+        <!-- 关联商品-->
+
+        <view wx:if="{{relation.type=='product'}}" style="display: flex;align-items: center;width: 100%;">
+            
+            <view style="display: flex;">
+                <image src="/images/default-avatar.jpg" style="width: 50px;height:50px;border-radius: 30px;"></image>
+            </view>
+            <view style="flex: 1;display: flex;flex-direction: column;padding-left: 10px;">
+                <view style="font-weight: 500;">美自燃草本精华露500ml</view>
+                <view style="font-size: 14px;color: #ff4657;font-weight: bold;">￥299.00</view>
+            </view>
+
+            <view  style="background: #07c160;border-radius: 8px;color:#fff;line-height: 24px;font-weight: 500;padding:6px 10px;font-size: 14px;">
+                了解更多
+            </view>
+        
+        </view>
+
+    </view> 
+</view>
+
+
+<view wx:else="{{has_load}}" style="display: flex;align-items: center;flex-direction: column;padding: 40rpx;">
+    <view>
+        <image src="/images/loading-black.svg" style="width: 80rpx;height: 80rpx;" />
+    </view>
+    <view style="padding: 20rpx;font-size: 28rpx;color: #888;">正在加载中，请稍后</view>
+</view>

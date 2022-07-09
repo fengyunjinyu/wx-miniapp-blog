@@ -1,0 +1,42 @@
+<!--pages/login/login.wxml-->
+<view wx:if="{{has_load}}" class="page" >
+    <view class="page-body"> 
+        <view  class='header' style="align-items: center;padding-top: 40px;">
+            
+            <view>
+                <image src="{{miniapp.head_img}}" style="width: 60px;height:60px;" />
+            </view>
+            <view style="text-align: center;padding-top: 20px;">
+                <text style="font-size: 18px;color: #363636;font-weight: 500;">{{miniapp.nick_name}}</text>
+            </view>
+        </view>
+
+        <view class='content' style="padding-top: 20px;">
+            <view style="font-size: 16px;">申请获取以下权限</view>
+            <text style="color: #888;padding: 10px 0;font-size: 15px;">获得你的公开信息(昵称，头像等)</text>
+        </view>
+  
+        <view style="padding: 10px 20px;text-align: center;">
+            <button class='btn_auth_login' type='primary' style="font-size: 16px;width: 100% !important;line-height: 28px;display: block;" open-type="getUserInfo" lang="zh_CN" bindtap="doLogin">
+                微信授权登录
+            </button>
+
+        </view>
+
+        <!--
+  
+        <view class='content' style="padding-top: 40px;">
+            <view style="font-size: 18px;">申请获取以下权限</view>
+            <text style="color: #888;padding: 10px 0;">获得你的公开信息(昵称，头像等)</text>
+        </view>
+  
+        <view style="padding: 20px 0;">
+            <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindtap="doLogin">
+                微信授权登录
+            </button>
+        </view>
+
+        -->
+    </view>
+</view>
+

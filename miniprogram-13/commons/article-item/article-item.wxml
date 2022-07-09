@@ -1,0 +1,60 @@
+<!--commons/article-item/article-item.wxml-->
+<template name="article-item">
+
+    <navigator wx:if="{{show_type=='base'}}" url="/pages/article/detail?id={{id}}"  class="item-article article-type-base" >
+        <view class="article-title" >{{title}}</view>
+        <view class="article-quote" >{{quote}}</view>
+        <view class="article-date" >{{create_time}}</view>
+    </navigator>
+
+    <!--图片展示-->
+
+    <view  wx:if="{{show_type=='picture'}}" class="item-article article-type-picture" >
+
+        <view class="article-title" >{{title}}</view>
+        <view class="image-list">
+            <block wx:for="{{image_list}}" wx:for-item="img">
+                <view class="image-item">
+                    <image class="image" src="{{img}}" mode="widthFix"></image>
+                </view>
+            </block>
+        </view>
+
+        <view style="text-align: right;">
+            <navigator url="/pages/article/detail?id=1" hover-class="none">详情</navigator>
+        </view>
+        
+    </view>
+
+    <navigator url="/pages/article/detail?id={{id}}"  wx:if="{{show_type=='image_left'}}" class="item-article article-type-imgleft" >
+        <view class="image-left-right-area" >
+            <image class="article-thumb" src="{{thumb}}" mode="heightFix" style="width: 80px;height: 80px;"></image>
+        </view>
+        <view class="article-info">
+            <view class="article-title" >{{title}}</view>
+            <view class="article-date" >{{create_time}}</view>
+        </view>
+    </navigator>
+
+    <navigator url="/pages/article/detail?id={{id}}" wx:if="{{show_type=='image_right'}}" class="item-article article-type-imgright" >
+
+        
+        <view class="article-info" >
+            <view class="article-title">{{title}}</view>
+            <view class="article-date" >{{create_time}}</view>
+        </view>
+
+        <view class="image-left-right-area">
+            <image class="article-thumb" src="{{thumb}}" mode="heightFix" style="width: 80px;height: 80px;"></image>
+        </view>
+    </navigator>
+
+
+    <navigator url="/pages/article/detail?id={{id}}" wx:if="{{show_type=='image_bottom'}}" class="item-article article-type-imgbottom" style="">
+        <view class="article-title" >{{title}}</view>
+        <view >
+            <image class="article-thumb" src="{{thumb}}" mode="aspectFill" style="border-radius: 8px;" ></image>
+        </view>
+    </navigator>
+
+</template>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "add-tips": "/commons/add-tips/index",
+    "custom-header":"../../commons/custom-header/index"
+  },
+  
+  "navigationStyle":"default"
+  
+}

@@ -1,0 +1,29 @@
+<!--pages/category/category.wxml-->
+<import src="../../commons/list-article-item/list-article-item.wxml" />
+<view wx:if="{{has_load}}" class="page">
+
+    
+    <view class="page-body" style="background: #fff;flex: 1;overflow-y: auto;">
+
+        <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="getMore">
+            <view wx:if="{{article_list.length>0}}" style="padding: 0 20rpx;">
+                <block wx:for="{{article_list}}" wx:for-item="article" wx:for-index="index">
+                    <template is="list-article-item" data="{{...article}}"></template>
+                </block>
+            </view>
+            
+            <view wx:if="{{no_more_data}}" class="no_more_data">
+                暂无更多数据
+            </view>
+            <view wx:if="{{no_data}}" class="no_more_data">
+                暂无更多数据
+            </view>
+            
+        </scroll-view>
+    </view>
+    
+</view>
+
+<view wx:if="{{has_load==false}}" class="load_more">
+    <template is="loading_page" data="{{...article}}"></template>
+</view>

@@ -1,0 +1,36 @@
+/* commons/CustomHeader/index.wxss */
+
+
+.backHome_box {
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: absolute;
+    left: 10px;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   }
+   .backIcon {
+    border-right: 1rpx solid #e5e5e5;
+   }
+
+
+   .customHeader_box {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+   }
+   .customIcon {
+    flex: 1;
+   }
+   .customIcon image {
+    width: 30rpx;
+    height: 30rpx;
+   }

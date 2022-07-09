@@ -1,0 +1,55 @@
+<!--pages/good/index.wxml-->
+
+<import src="../../commons/list-article-item/list-article-item.wxml" />
+<view wx:if="{{has_load}}" class="page">
+    <view class="page-header">
+    
+    </view>
+
+    <view class="page-body" style="flex: 1;height: 100%;overflow-y: auto;">
+
+        <scroll-view scroll-y="true" class="good_list" bindscrolltolower="getMore" style="height: 100%;">
+
+            <view>
+                <block wx:for="{{good_list}}" wx:for-item="good" wx:for-index="index">
+                
+                    <navigator class="item-good" url="/pages/good/detail?id={{good.id}}" hover-class="none" >
+                        
+                        <view style="width: 100px;">
+                            <image src="{{good.thumb}}" style="width: 100%;display: block;height: 100px;" mode="aspectFill" />
+                        </view>
+
+                        <view style="flex: 1;padding-left: 20rpx;">
+                            <view class="item-good-name">{{good.name}}</view>
+                            <view class="item-good-price">￥{{good.price}}</view>
+                            <template is="star" data="{{...good}}"/>
+                            <view style="color: #888;font-size: 24rpx;">{{good.recommend_reason}}</view>
+                        </view>
+                        
+                        
+                    </navigator>
+
+                    
+                </block>
+            </view>
+
+
+            <view wx:if="{{no_data}}">
+                
+                <template is="no_data" />
+            </view>
+
+            <view wx:if="{{no_data==false && no_more_data==true}}">    
+                <template is="no_more_data" />
+            </view>
+
+        </scroll-view>
+
+    </view>
+
+    <view class="page-footer">
+    </view>
+</view>
+
+
+

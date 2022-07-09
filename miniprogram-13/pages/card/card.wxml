@@ -1,0 +1,55 @@
+<!--pages/card/card.wxml-->
+<view wx:if="{{has_load}}" class="page">
+
+    <view class="page-body" style="flex: 1;display: flex;flex-direction: column;overflow-y: auto;padding:20px;background: #ededed;">
+        <view style="padding:40rpx 0;box-shadow: #ddd 0 0 10px;border-radius: 20rpx;flex: 1;background: #fff;">
+
+            <view style="display: flex;flex-direction:column;text-align: center;text-align: center;">
+                <view>
+                    <image src="{{card_info.head_img}}" style="display: inline-block;width: 60px;height: 60px;border-radius:40px;"></image>
+                </view>
+                <view style="font-size: 40rpx;padding: 20rpx 0;font-weight: 500;line-height: 100%;">{{card_info.nickname}}</view>
+                <view style="color: #888;font-size: 14px;padding-top: 6px;">{{card_info.signature}}</view>
+               
+            </view>            
+        </view>
+
+
+        <view style="display: flex;flex-direction:column;padding: 20px;text-align: center;background: #fff;margin-top: 40rpx;border-radius: 8px;">
+
+            <view class="contact-item">
+                <view class="item-label">电话</view>
+                <view class="item-value" style="flex: 1;">{{card_info.mobile}}</view>
+                <view class="item-btn" bindtap="makePhoneCall" data-mobile="{{card_info.mobile}}">拨打</view>
+            </view>
+
+            <view class="contact-item">
+                <view class="item-label">微信</view>
+                <view class="item-value" style="flex: 1;">{{card_info.wechat}}</view>
+                <view class="item-btn" bindtap="copyText" data-text="{{card_info.mobile}}">复制</view>
+            </view>
+
+            <view class="contact-item">
+                <view class="item-label">邮箱</view>
+                <view class="item-value" style="flex: 1;">{{card_info.email}}</view>
+                <view class="item-btn" bindtap="copyText" data-text="{{card_info.mobile}}">复制</view>
+            </view>
+
+        </view>
+
+        <view style="display: flex;flex-direction:column;padding: 20px 0;text-align: center;background: #fff;margin-top: 40rpx;border-radius: 8px;">
+                    <view>
+                        <image bindtap="previewImage" src="{{card_info.qrcode}}" style="display: inline-block;width: 120px;height: 120px;" data-url="{{card_info.qrcode}}"></image>
+                        <view style="font-size: 28rpx;color: #888;padding-top: 20rpx;">长按识别小程序码，加我好友</view>
+                    </view>
+         </view>
+    </view>
+
+
+    <view style="position: fixed;right: -28rpx;top: 200rpx;">
+        <button class="footer-menu-item" open-type="share" style="background:#3388ff;padding:20rpx 40rpx;margin:0;width: auto;display: inline-block;font-weight: normal;font-size: 14px;font-weight: normal;border-radius: 40rpx;">
+            <view  style="color: #fff;">分享</view>
+        </button>
+    </view>
+
+</view>

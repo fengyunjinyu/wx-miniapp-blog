@@ -1,0 +1,6 @@
+/* pages/picture/detail.wxss */
+
+.image-item{
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,33 @@
+/* pages/good/index.wxss */
+.item-good{
+
+    padding:20rpx;
+    background:#fff;
+    display:flex;
+    margin-bottom: 20rpx;
+
+}
+.item-good-name{
+    font-size: 32rpx;
+    display: -webkit-box;
+    word-break: break-all;
+    color: #333;
+    font-weight: 500;
+    line-height: 40rpx;
+    height: 80rpx;
+    overflow: hidden;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    white-space: normal !important;
+
+
+}
+
+.item-good-price{
+    font-size: 28rpx;
+    font-weight: 500;
+    color: #ff4657;
+    padding-top: 20rpx;
+}

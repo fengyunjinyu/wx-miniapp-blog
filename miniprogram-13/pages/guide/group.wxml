@@ -1,0 +1,39 @@
+<!--pages/guide/group.wxml-->
+<import src="../../commons/list-article-item/list-article-item.wxml" />
+<view wx:if="{{has_load}}" class="page" style="background: #fff;">
+
+    <view class="page-body" style="display: flex;flex-direction: column;align-items: center;padding: 40rpx;">
+
+        <view style="font-size: 44rpx;font-weight: 500;padding: 20rpx;">{{guide_group.group_name}}</view>
+
+        <view style="padding: 20rpx;font-size: 32rpx;color: #888;padding-bottom: 40rpx;">{{guide_group.group_remark}}</view>
+
+        <view>
+            <image src="{{guide_group.qrcode}}" style="width: 400rpx;" mode="widthFix" data-url="{{guide_group.qrcode}}" bindtap="previewImage" ></image>
+        </view>
+
+        <view style="display: flex;padding-top: 40px;flex-direction: row;align-items: center;width:100%">
+            <view style="flex: 1;padding:0 10px;">
+            
+                <button open-type="share" style="border:#07c160 solid 2rpx;background:#07c160;width: auto !important;padding:10px;border-radius: 6px;font-weight: normal;font-size: 16px;text-align: center;color: #fff;">
+                    分享
+                </button>
+            </view>
+        </view>
+    </view>
+
+    <view class="page-footer">
+
+
+    </view>
+</view>
+
+
+<view wx:if="{{has_load==false}}">
+
+    <template is="loading_page"></template>
+
+</view>
+
+
+

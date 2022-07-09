@@ -1,0 +1,118 @@
+/* pages/login/login.wxss */
+
+/* pages/login/login.wxss */
+
+.header{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content{
+    font-size: 16px;
+    align-items: center;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.app_icon{
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 80rpx;
+}
+
+.form-user-login{}
+.form-user-login .list-item{
+
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-bottom: #f1f1f1 solid 2rpx;
+    padding:10px;
+
+}
+
+.form-user-login .list-item .item-left{
+    width:140rpx;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #333;
+
+}
+
+.form-user-login .list-item .item-right{
+    flex: 1;
+    box-sizing: border-box;
+    padding:10px;
+}
+
+.form-input{
+    display: block;
+    width: 100%;
+
+}
+
+.btn_login{
+    line-height: 24px;
+    color: #fff;
+    background:#3388ff;
+    text-align:center;
+    padding:10px;
+    border-radius: 8px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn_auth_login{
+    background: #07c160;
+    color: #fff;
+    padding:10px 30px;
+    font-weight: bold;
+    width:100%;
+    box-sizing:border-box;
+    border-radius:8px;
+    font-size: 16px;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.login-tab-list{
+    padding:10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.login-tab-list .login-tab-item{
+    font-size: 16px;
+    color: #888;
+    padding:10px;
+    flex: 1;
+    text-align: center;
+}
+
+.login-tab-item.active{
+    color: #3388ff;
+    font-weight: bold;
+}
+
+.item-content{
+    line-height: 80rpx;
+    border-bottom: #ededed solid 6rpx;
+    font-size: 32rpx;
+    padding:24rpx 0;
+    cursor: pointer;
+}
+.login-tab-item.active .item-content{
+    border-bottom: #3388ff solid 6rpx;
+    font-size: 40rpx;
+
+}

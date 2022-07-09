@@ -1,0 +1,7 @@
+/* pages/picture/index.wxss */
+
+.picture-item{
+    padding: 20rpx;
+    border-bottom: #f1f1f1 solid 2rpx;
+    background: #fff;
+}

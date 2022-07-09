@@ -1,0 +1,38 @@
+<!--pages/article/index.wxml-->
+<import src="../../commons/article-item/article-item.wxml" />
+<import src="../../commons/list-article-item/list-article-item.wxml" />
+<view wx:if="{{has_load}}" class="page {{skin}}" style="display: flex;flex-direction: column;">
+    <view class="page-header nav-menus" >
+        <scroll-view scroll-x="true" style="white-space: nowrap;display: flex;height: 100rpx;line-height: 100rpx;"> 
+        
+            <view class="{{tab_index==-1?'nav-item active' :'nav-item'}}"  data-index="-1" bindtap="selectNav">全部</view>
+            <block wx:for="{{category_list}}" wx:for-item="category" wx:for-index="index">
+                <view class="{{tab_index==index?'nav-item active' :'nav-item'}}" bindtap="selectNav" data-index="{{index}}" data-cid="{{category.id}}">{{category.category_name}}</view>
+            </block>
+        </scroll-view>
+    </view>
+    <view class="page-body" style="flex: 1;overflow: hidden;background: #fff;">
+
+        <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="getMore">
+            <view class="article_list">
+                <block wx:for="{{article_list}}" wx:for-item="article" wx:for-index="index">
+                    <template is="list-article-item" data="{{...article}}"></template>
+                </block>
+            </view>
+
+
+            <view wx:if="{{no_data}}" style="text-align: center;padding: 20px;font-size: 24rpx;color: #888;"> 暂无更多数据 </view>
+            <view wx:else="{{no_data}}" style="text-align: center;padding: 20px;font-size: 24rpx;color: #888;" bindtap="getMore">加载更多</view>
+
+        </scroll-view>
+    
+    </view>
+</view>
+
+<view wx:else="{{has_load}}" style="padding: 40rpx;">
+
+    <template is="loading_page"></template>
+
+
+
+</view>

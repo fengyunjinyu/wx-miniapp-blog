@@ -1,0 +1,66 @@
+<!--pages/me/setting.wxml-->
+<view class="page">
+
+    <view class="page-header">
+
+
+    
+    </view>
+    <view class="page-body" >
+
+
+        <view class="list_base"  style="margin-bottom: 20rpx;margin-top: 20rpx;">
+
+            <view class="list-item" style="display: flex;">
+                <view style="flex: 1;display: flex;align-items: center;font-size: 15px;">
+                    头像
+                </view>
+                <view bindtap="changeUserIcon">
+                    <image wx:if="{{user_info.avatarUrl!=null}}" src="{{user_info.avatarUrl}}" style="width: 60px;height:60px;display:block;border-radius: 30px;" mode="aspectFill" ></image>
+
+                    <image wx:if="{{user_info.avatarUrl==null}}" src="/images/default-avatar.jpg" style="width: 60px;height:60px;display:block;border-radius: 30px;" mode="aspectFill" ></image>
+                </view>
+            </view>
+
+            <view class="list-item" style="display: flex;">
+                <view class="item-left">
+                    昵称
+                </view>
+                <view class="item-right" style="color: #888;">
+                    <text  wx:if="{{user_info.nickName!=null}}">{{user_info.nickName}}</text>
+                    <text  wx:else="{{user_info.nickName!=null}}">未设置</text>
+                </view>
+            </view>
+
+
+
+
+
+        </view>
+
+        <view class="list_base"  style="margin-bottom: 20rpx;margin-top: 20rpx;">
+
+            <navigator url="/pages/me/about" hover-class="none" class="list-item" style="display: flex;line-height: 60rpx;padding:24rpx 20rpx 24rpx 0">
+                <view style="flex: 1;display: flex;align-items: center;font-size: 15px;">
+                    关于
+                </view>
+                <view >
+                    博客小程序
+                </view>
+            </navigator>
+        </view>
+
+
+        <view style="text-align: center;padding: 30rpx 0;background: #fff;margin-bottom: 60px;line-height: 100%;" bindtap="doLogout">
+            <text style="font-size: 16px;color:#ff4657;font-weight: bold;">退出登录</text>
+        </view>
+
+
+    
+    </view>
+
+    <view class="page-footer">
+    
+    
+    </view>
+</view>

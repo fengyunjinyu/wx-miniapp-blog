@@ -1,0 +1,65 @@
+<!--pages/me/me.wxml-->
+
+<view class="wrapper page-body">
+  <view class="page_hd">
+    <view class="hd-user-info" wx:if="{{hasUserInfo}}">
+      <view>
+        <image wx:if="{{userInfo.avatarUrl==null}}" src="/images/default-avatar.jpg" style="display: block;width: 12r0px;height: 120rpx;border-radius: 60rpx;" ></image>
+        <image wx:if="{{userInfo.avatarUrl !=null }}"  src="{{userInfo.avatarUrl}}" mode="cover" style="width:120rpx;height:120rpx;border-radius: 60rpx;"></image>
+      </view>
+
+      <view  style=" align-items: center;vertical-align: middle;padding:10px;font-weight: 500;color: #000;font-size: 36rpx;">
+        <view wx:if="{{userInfo.nickName!=null}}">{{userInfo.nickName}}</view>
+        <view wx:else="{{userInfo.nickName!=null}}">未设置</view>
+      </view>
+
+    </view>
+
+    <view class="hd-user-info" wx:else="{{hasUserInfo}}">
+      <image src="/images/default-avatar.jpg" style="display: block;width: 60px;height: 60px;border-radius: 40px;" ></image>
+      <navigator url="/pages/login/login" style="flex: 1;align-items: center;display: flex;align-items: center;color: #888;padding: 10rpx;margin-top: 10px;font-size: 14px;" hover-class="none">
+        <text bindtap="goLogin" style="color: #888;">点击授权登录</text>
+      </navigator>
+    </view>
+
+  </view>
+
+  <view class="page-body" >
+
+    <view class="menu-list">
+        <navigator url="/pages/me/save" class="menu-item" hover-class="none">
+        
+            <view class="item-left">
+                收藏
+            </view>
+            <view class="">
+                <icon class="iconfont icon-right" style="line-height: 30rpx;"></icon>
+            </view>
+            </navigator>
+
+        <navigator url="/pages/card/card" class="menu-item" hover-class="none">
+            
+            <view class="item-left">
+                联系博主
+            </view>
+            <view class="">
+                <icon class="iconfont icon-right" style="line-height: 30rpx;"></icon>
+            </view>
+        </navigator>
+
+        <navigator url="/pages/me/setting" class="menu-item" hover-class="none">
+
+
+            <view class="item-left">
+                设置
+            </view>
+            <view class="">
+                <icon class="iconfont icon-right" style="line-height: 30rpx;"></icon>
+            </view>
+        </navigator>
+    </view>
+
+    
+  
+  </view>
+</view>

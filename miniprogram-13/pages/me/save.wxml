@@ -1,0 +1,29 @@
+<!--pages/me/save.wxml-->
+<import src="../../commons/list-article-item/list-article-item.wxml" />
+<view wx:if="has_load" class="page">
+    <view class="page-header">
+        
+    </view>
+
+    <view class="page-body">
+        <view class="article-list">
+            <block wx:for="{{user_save_list}}" wx:for-item="article" wx:for-index="index">
+                <template is="list-article-item" data="{{...article}}"></template>
+            </block>
+        </view>
+
+
+        <view wx:if="{{no_more_data==false}}" class="load_more" bindtap="getMore">加载更多数据</view>
+        <view wx:if="{{no_more_data}}" class="no_more_data">暂无更多数据</view>
+
+        <view wx:if="{{no_data}}" class="no_more_data" style="display: flex;align-items: center;flex-direction: column;">
+            <image src="/images/no_data.png" style="display: block;width: 120rpx;" mode="widthFix"></image>
+            <view style="padding-top: 10px;">暂无收藏数据</view>
+        </view>
+
+
+    </view>
+
+    <view class="page-footer">
+    </view>
+</view>

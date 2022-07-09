@@ -1,0 +1,85 @@
+<!--index.wxml-->
+<import src="../../commons/list-article-item/list-article-item.wxml" />
+
+<view class="page {{skin}}">
+
+    <view class="box">
+        <add-tips name="示例" custom ></add-tips>
+    </view>
+    <view class="page-header">
+        <view class="search_input" >
+            <navigator url="/pages/article/search" open-type="navigate" class="navigator" style="border:#f1f1f1 solid 1px">
+                <icon class="icon-small" type="search" size="18"></icon>
+                <text style="font-size: 28rpx;">请输入关键字</text>
+            </navigator>
+        </view>
+    
+    </view>
+  <view class="page-body" style="background: #fff;flex: 1;overflow-y: scroll;">
+    
+
+    <!--
+    <view style="font-size: 16px;color: #666;padding:20px;text-align: center;background: #fff;font-weight: bold;">
+        
+        <view>
+            <navigator url="/pages/card/card">我的名片</navigator>
+        </view>
+
+        <view style="color: #000;font-weight: 500;font-size: 22px;padding: 10px ;">
+            好雨知时节，当春乃发生
+        </view>
+
+    </view>
+    -->
+
+
+    
+
+        <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="getMore">
+
+            <view class="article-list" style="padding: 0 20rpx;">
+                <block wx:for="{{article_list}}" wx:for-item="article" wx:for-index="t">
+                    <template is="list-article-item" data="{{...article}}"></template>
+                </block>
+            </view>
+
+            <view wx:if="{{no_more_data}}" style="text-align:center;padding: 40rpx;color: #888;font-size: 28rpx;">
+                    暂无更多数据
+            </view>
+        </scroll-view>
+
+        <!--
+        <swiper style="height: 100%;" current="{{cat_index}}" bindchange="swiperChange" circular="true">
+        <block wx:for="{{article_list}}" wx:for-index="index" wx:for-item="article_group" wx:key="*this">
+          <swiper-item>
+            <scroll-view scroll-y="true" style="height: 100%;">
+
+                <view wx:if="{{article_group.article_list.length>0}}">
+                
+                    <view class="article-list" style="padding: 0 20rpx;">
+                        <block wx:for="{{article_group.article_list}}" wx:for-item="article" wx:for-index="t">
+                            <template is="list-article-item" data="{{...article}}"></template>
+                        </block>
+                    </view>
+                    <view style="flex: 1;font-size: 14px;padding-right: 10px;color: #888;text-align: center;padding:10px 0;" bindtap="getMore">
+                        <navigator url="/pages/category/category?id={{article_group.id}}" hover-class="none">查看更多内容</navigator>
+                    </view>
+                </view>
+                <view  wx:if="{{article_group.article_list.length<=0}}" style="text-align:center;padding: 40rpx;color: #888;">
+                    暂无数据
+                </view>
+
+            </scroll-view>
+
+          </swiper-item>
+        </block>
+      </swiper>
+      -->
+    
+
+  </view>
+
+  <view class="page-footer">
+  
+  </view>
+</view>

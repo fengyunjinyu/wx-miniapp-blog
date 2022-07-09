@@ -1,0 +1,22 @@
+/* pages/article/search.wxss */
+
+.article_list{
+    padding: 0 20rpx;
+
+}
+.article-item{
+
+    padding: 20rpx 0;
+    border-bottom: #f1f1f1 solid 1px;
+    display: flex;
+    flex-direction: row;
+
+}
+.article-title{
+    font-size: 32rpx;
+    font-weight: 500;
+}
+
+
+
+

@@ -1,0 +1,44 @@
+/* pages/guide/guide.wxss */
+
+.menu-list{
+    background: #fff;
+    padding-left: 32rpx;
+    border-top: #ddd solid 1px;
+    border-bottom: #ddd solid 1px;
+    margin-top: 24rpx;
+}
+.menu-list .menu-item{
+    padding: 24rpx 0;
+    font-size: 32rpx;
+    font-weight: 500;
+    border-bottom: #ededed solid 2rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 20rpx;
+
+}
+.menu-list .item-name{
+    flex: 1;
+    color: #666;
+    font-size: 30rpx;
+}
+
+.menu-list .menu-item .item-left-icon{
+    display: flex;
+    align-items: center;
+    padding-right: 20rpx;
+    width:60rpx;
+}
+.menu-list .menu-item .item-left-icon .iconfont {
+    line-height: 100%;
+    font-size: 24px;
+}
+
+.menu-list .menu-item:last-child{
+    border-bottom: none;
+}
+
+.menu-list .menu-item .arrow{
+    color: #666;
+}

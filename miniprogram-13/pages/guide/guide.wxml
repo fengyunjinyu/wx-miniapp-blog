@@ -1,0 +1,46 @@
+<!--pages/guide/guide.wxml-->
+
+<view class="page">
+
+    <view class="page-header">
+    </view>
+
+
+    <div class="page-body">
+        <view class="menu-list">
+            <navigator url="/pages/card/card" class="menu-item" hover-class="none">
+                <view class="item-left-icon"><icon class="iconfont icon-mingpian" size="24"></icon></view>
+                <view class="item-name">我的名片</view>
+                <view class="arrow" style="display: flex;align-items: center;">
+                    <icon class="iconfont icon-right" style="font-size:16px;line-height: 60rpx;"></icon>
+                </view>
+            </navigator>
+
+            <navigator url="/pages/picture/index" class="menu-item" hover-class="none">
+                <view class="item-left-icon"><icon class="iconfont icon-zhaopian" size="20" style="font-size: 24px;"></icon></view>
+                <view class="item-name">我的相册</view>
+                <view class="arrow" style="display: flex;align-items: center;">
+                    <icon class="iconfont icon-right" style="font-size:16px;line-height: 60rpx;"></icon>
+                </view>
+            </navigator>
+            <navigator url="/pages/good/index" class="menu-item" hover-class="none">
+                <view class="item-left-icon"><icon class="iconfont icon-shangpin" size="20" style="font-size: 36rpx;padding: 8rpx;"></icon></view>
+                <view class="item-name">推荐商品</view>
+                <view class="arrow" style="display: flex;align-items: center;">
+                    <icon class="iconfont icon-right" style="font-size:16px;line-height: 60rpx;"></icon>
+                </view>
+            </navigator>
+
+            <navigator url="/pages/guide/group" class="menu-item" hover-class="none">
+                <view class="item-left-icon">
+                    <image src="/images/icon-group.png" style="display: block;width: 48rpx;height: 48rpx;"></image>
+                </view>
+                <view class="item-name">我的微信群</view>
+                <view class="arrow" style="display: flex;align-items: center;">
+                    <icon class="iconfont icon-right" style="font-size:16px;line-height: 60rpx;"></icon>
+                </view>
+            </navigator>
+        </view>
+    </div>
+    
+</view>

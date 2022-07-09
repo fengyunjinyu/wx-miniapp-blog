@@ -1,0 +1,37 @@
+/* pages/me/me.wxss */
+
+.hd-user-info{
+    display: flex;
+    padding: 60rpx 32rpx;
+    background:#fff;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .menu-list{
+      background: #fff;
+      padding-left: 32rpx;
+      border-top: #ddd solid 1px;
+      border-bottom: #ddd solid 1px;
+      margin-top: 24rpx;
+  }
+  .menu-list .menu-item{
+      line-height: 60rpx;
+      padding: 20rpx 0;
+      font-size: 32rpx;
+      font-weight: 500;
+      border-bottom: #ededed solid 2rpx;
+      display: flex;
+      padding-right: 20rpx;
+      
+
+  }
+
+  .menu-list .menu-item .item-left{
+      flex: 1;
+  }
+
+  .menu-list .menu-item:last-child{
+      border-bottom: none;
+  }

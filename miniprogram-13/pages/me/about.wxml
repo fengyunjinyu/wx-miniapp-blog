@@ -1,0 +1,54 @@
+<!--pages/me/about.wxml-->
+
+<view wx:if="{{has_load}}" class="page">
+
+    <view class="page-body" style="background: #fff;flex: 1;">
+
+        <view style="padding:40rpx ">
+
+            <view style="padding: 20rpx;background: #fff;margin-bottom: 20rpx;display: flex;flex-direction:column;align-items: center;">
+                <image src="{{template_info.thumb}}" style="width: 160rpx;height:160rpx;"></image>
+            </view>
+            <view style="padding-bottom: 20rpx;">
+                <view style="padding:20rpx 0;background: #fff;text-align: center;font-size: 40rpx;font-weight: 500;">{{template_info.app_name}}</view>
+                <view style="text-align: center;color: #888;font-size: 28rpx;">版本v{{template_info.version}}</view>
+            </view>
+
+        </view>
+        
+        <view class="list-base" >
+            
+            <view class="list-item" >
+                <view class="item-left" style="flex: 1;display: flex;align-items: center;">应用描述</view> 
+                <view class="item-right">{{template_info.quote}}</view>
+            </view>
+
+            <view class="list-item" >
+                <view class="item-left" style="flex: 1;">特点</view> 
+                <view class="item-right">
+                    {{template_info.app_tags}}
+                
+                </view>
+            </view>
+
+            <view class="list-item" >
+                <view class="item-left" style="flex: 1;">三方平台</view> 
+                <view class="item-right">{{template_info.open_name}}</view>
+            </view>
+            <view class="list-item" >
+                <view class="item-left" style="flex: 1;">技术服务商</view> 
+                <view class="item-right" >{{template_info.company_name}}</view>
+            </view>
+
+            <view class="list-item" >
+                <view class="item-left" style="flex: 1;">客服电话</view> 
+                <view class="item-right" bindtap="makePhone" data-mobile="{{template_info.mobile}}">{{template_info.mobile}}</view>
+            </view>
+            
+        </view>
+
+    </view>
+
+
+</view>
+
